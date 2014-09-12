@@ -42,8 +42,10 @@ Some words about the Pointcloud nodes
 =====================================
 
 At this moment there a two different nodes to create pointclouds. Both are capable to filter out points by simply putting in filter transforms.
+
 1. The Pointcloud (DX11.Texture) node creates a simple colored pointcloud layer that can be rendered directly. Additionally it outputs a 2d texture that contains all (filtered)
 points where the world coordinates are encoded in its RGB values.
+
 2. The Pointcloud (DX11.Buffer) also creates a pointcloud layer with the advantage that you can use arbitrary geometries for each point. Additionally it outputs the number of vertices, a buffer containing
 the pointcloud data and an indexbuffer that can be used in further shaders.
 
