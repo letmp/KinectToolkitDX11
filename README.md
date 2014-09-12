@@ -74,5 +74,7 @@ License
 =======
 
 ![CC 4.0BY NC SAt](http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+
 Robert Willner (www.intolight.de)
+
 This software is distributed under the [CC Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
