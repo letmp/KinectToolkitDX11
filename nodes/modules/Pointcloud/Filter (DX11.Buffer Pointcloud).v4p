@@ -1,0 +1,211 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="C:\apps\code\vvvv_45beta32.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Filter (DX11.Buffer Pointcloud).v4p" systemname="PointCloud_FilterCoords" filename="D:\workspace\dev\research\2014\kinectPointcloudDX11\prototype02\modules\KinectPointCloud (DX11)\PointCloud_FilterCoords.v4p">
+   <BOUNDS type="Window" left="13800" top="1680" width="7515" height="7020">
+   </BOUNDS>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1155" top="390" width="600" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1155" top="390" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="2" values="VerticesCount,VerticesCount">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (DX11 Buffer)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="675" top="4695" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Reset Counter" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Appendable" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Stride" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Reset Counter Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2265" top="2415" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="63">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="2280" top="2790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="64">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2295" top="3165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Whole Part" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2295" top="3525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Thread X" visible="1">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="2295" top="3525">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Whole Part" dstnodeid="1" dstpinname="Thread X">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Element Count" linkstyle="VHV">
+   <LINKPOINT x="1480" y="2150">
+   </LINKPOINT>
+   <LINKPOINT x="860" y="2800">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="14" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="690" top="5235" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="690" top="5235" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="2" values="IndexBuffer,IndexBuffer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Buffers" dstnodeid="14" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Input 1" linkstyle="VHV">
+   <LINKPOINT x="1215" y="1515">
+   </LINKPOINT>
+   <LINKPOINT x="2265" y="1515">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="15" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="4185" top="390" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4185" top="390" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Filter|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="3510" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="3315" top="1935" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Count" dstnodeid="16" dstpinname=".. To [" linkstyle="VHV">
+   <LINKPOINT x="3555" y="1915">
+   </LINKPOINT>
+   <LINKPOINT x="3495" y="1865">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Output Node" dstnodeid="17" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4020" y="1063">
+   </LINKPOINT>
+   <LINKPOINT x="3720" y="1113">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="18" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="3975" top="2790" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3975" top="2790" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="2" values="CoordinatesBuffer,CoordinatesBuffer">
+   </PIN>
+   </NODE>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="3645" top="2280" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output Node" dstnodeid="20" dstpinname="Source" linkstyle="VHV">
+   <LINKPOINT x="4030" y="1440">
+   </LINKPOINT>
+   <LINKPOINT x="4385" y="1440">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <INFO author="tmp" description="Returns all indices of the buffer coordinates that are inside the given filter." tags="DX11, Kinect, Pointcloud">
+   </INFO>
+   <NODE systemname="CS_FilterPointcloud (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Pointcloud\dx11\CS_FilterPointcloud.fx" nodename="CS_FilterPointcloud (DX11.Effect)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="1965" top="3900" width="2715" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1965" top="3900">
+   </BOUNDS>
+   <PIN pinname="Transform Filter" visible="1">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Layer" dstnodeid="5" dstpinname="Layer" linkstyle="VHV">
+   <LINKPOINT x="1965" y="4418">
+   </LINKPOINT>
+   <LINKPOINT x="1050" y="4418">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="19" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="3510" y="3875">
+   </LINKPOINT>
+   <LINKPOINT x="1140" y="3790">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="19" dstpinname="elementcount" linkstyle="VHV">
+   <LINKPOINT x="1215" y="2265">
+   </LINKPOINT>
+   <LINKPOINT x="2955" y="2265">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="19" dstpinname="slice">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="19" dstpinname="sobuffer">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Transform Out" dstnodeid="19" dstpinname="Transform Filter">
+   </LINK>
+   </PATCH>

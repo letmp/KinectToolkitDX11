@@ -1,0 +1,241 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.0.dtd" >
+   <PATCH nodename="C:\Users\Anwender\Desktop\boundingbox\BoundingBox (Transform) help.v4p" systemname="Bounds (Transform) help" filename="C:\Users\Anwender\Desktop\boundingbox\Bounds (Transform) help.v4p">
+   <BOUNDS type="Window" left="2460" top="3300" width="6360" height="6540">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="375" top="5220" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="375" top="5220" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8895" top="3300" width="6360" height="6555">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2460" top="2445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Translate XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="2670" top="2025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Width" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="12">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="18" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Translate XYZ">
+   </LINK>
+   <NODE systemname="Box (EX9.Geometry)" filename="" nodename="Box (EX9.Geometry)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2775" top="3510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Constant (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\Constant.fx" nodename="Constant (EX9.Effect)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="2145" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Mesh" dstnodeid="5" dstpinname="Mesh" linkstyle="VHV">
+   <LINKPOINT x="2775" y="3848">
+   </LINKPOINT>
+   <LINKPOINT x="2370" y="3848">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="5" dstpinname="Transform" linkstyle="VHV">
+   <LINKPOINT x="2410" y="3423">
+   </LINKPOINT>
+   <LINKPOINT x="2555" y="3223">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1335" top="4785" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Initial Interest" slicecount="3" values="0,2,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="View" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Projection" dstnodeid="1" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="390" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="390" top="3945">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="390" top="4425" width="5310" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 1" linkstyle="VHV">
+   <LINKPOINT x="415" y="4320">
+   </LINKPOINT>
+   <LINKPOINT x="410" y="4320">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 2" linkstyle="VHV">
+   <LINKPOINT x="2155" y="4313">
+   </LINKPOINT>
+   <LINKPOINT x="2150" y="4313">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2145" top="3510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Render State Out" dstnodeid="5" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="2170" y="3863">
+   </LINKPOINT>
+   <LINKPOINT x="2165" y="3863">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Constant (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\Constant.fx" nodename="Constant (EX9.Effect)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="3885" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,0.41167,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 3" linkstyle="VHV">
+   <LINKPOINT x="3900" y="4313">
+   </LINKPOINT>
+   <LINKPOINT x="3885" y="4313">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Mesh" dstnodeid="12" dstpinname="Mesh" linkstyle="VHV">
+   <LINKPOINT x="2835" y="3848">
+   </LINKPOINT>
+   <LINKPOINT x="4050" y="3848">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Render State Out" dstnodeid="12" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="2200" y="3848">
+   </LINKPOINT>
+   <LINKPOINT x="3890" y="3848">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="17" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="255" left="3900" top="90" type="Node" width="570">
+   </BOUNDS>
+   <BOUNDS height="300" left="3900" top="90" type="Box" width="1950">
+   </BOUNDS>
+   <BOUNDS height="160" left="10140" top="44760" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|tmp (robert@intolight.de)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="16" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="90" top="90" type="Node" width="915">
+   </BOUNDS>
+   <BOUNDS height="375" left="90" top="90" type="Box" width="4230">
+   </BOUNDS>
+   <BOUNDS height="160" left="10140" top="44760" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|BoundingBox (Transform)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="19" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="255" left="90" top="555" type="Node" width="570">
+   </BOUNDS>
+   <BOUNDS height="1125" left="90" top="555" type="Box" width="2850">
+   </BOUNDS>
+   <BOUNDS height="160" left="10140" top="44760" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|calculates the bounding box transform for an arbitrary number of transforms.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="BoundingBox (Transform)" filename="BoundingBox (Transform).v4p" nodename="BoundingBox (Transform)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="4200" top="3075" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9900" top="0" width="4875" height="8400">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform" linkstyle="VHV">
+   <LINKPOINT x="2520" y="2880">
+   </LINKPOINT>
+   <LINKPOINT x="4200" y="2880">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="2700" top="1635" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Cycles" dstnodeid="3" dstpinname="Random Seed">
+   </LINK>
+   </PATCH>
