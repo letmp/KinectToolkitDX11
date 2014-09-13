@@ -73,8 +73,11 @@ These are more sophisticated (especially on the GPU) but also very interesting:
 License
 =======
 
+© intolight, 2014
 ![CC 4.0BY NC SAt](http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
-Robert Willner (www.intolight.de)
+Author: intolight (robert@intolight.de)
 
 This software is distributed under the [CC Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
+If this license seems to restrictive for your use case, please contact *license (at) intolight.de* and tell us about your project or your goal, so we can find a solution or an alternative license for you.
