@@ -48,7 +48,7 @@ VS_OUT VS(VS_IN input)
 
 GeometryShader StreamOutGS = ConstructGSWithSO( CompileShader( vs_4_0, VS() ), "POSITION.xyzw;TEXCOORD0.xy",NULL,NULL,NULL,-1 );
 
-technique10 PassMesh
+technique10 PointCloud
 {
     pass PP2
     {

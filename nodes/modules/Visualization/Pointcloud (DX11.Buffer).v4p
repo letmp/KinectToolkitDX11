@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta32.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Pointcloud (DX11.Buffer).v4p" systemname="PointCloud_Simple" filename="D:\workspace\dev\research\2014\kinectPointcloudDX11\prototype02\modules\PointCloud_Simple.v4p">
-   <BOUNDS type="Window" left="7200" top="4185" width="13260" height="9675">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Pointcloud (DX11.Buffer).v4p" systemname="PointCloud_Simple" filename="D:\workspace\dev\research\2014\kinectPointcloudDX11\prototype02\modules\PointCloud_Simple.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="15285" top="5790" width="13260" height="9675">
    </BOUNDS>
    <NODE systemname="Topology (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Topology (DX11.Geometry)" componentmode="Hidden" id="12">
    <BOUNDS type="Node" left="510" top="3195" width="100" height="100">
@@ -142,10 +142,10 @@
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="31.9.0">
+   <PACK Name="addonpack" Version="33.0.0">
    </PACK>
    <NODE systemname="IndexIndirect (DX11.Drawer)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="IndexIndirect (DX11.Drawer)" componentmode="Hidden" id="73">
-   <BOUNDS type="Node" left="1830" top="7335" width="1080" height="270">
+   <BOUNDS type="Node" left="1380" top="6135" width="1080" height="270">
    </BOUNDS>
    <PIN pinname="Instance Arg Buffer" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
@@ -155,7 +155,7 @@
    </PIN>
    <PIN pinname="Default Instance Count" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Box" left="1830" top="7335">
+   <BOUNDS type="Box" left="1380" top="6135">
    </BOUNDS>
    </NODE>
    <NODE systemname="GS_DepthToCoordinates (DX11.GeomFX)" filename="geom11\GS_DepthToCoordinates.gsfx" nodename="GS_DepthToCoordinates (DX11.GeomFX)" componentmode="Hidden" id="35">
@@ -180,6 +180,8 @@
    <PIN pinname="Enabled" visible="1">
    </PIN>
    <PIN pinname="Query" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="PointCloud">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Geometry Out" dstnodeid="35" dstpinname="Geometry In" linkstyle="VHV">
@@ -220,7 +222,7 @@
    <PIN pinname="Descriptive Name" slicecount="2" values="|Pointcloud Buffer|,|Pointcloud Buffer|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="188" dstpinname="Input Node" linkstyle="VHV" hiddenwhenlocked="0">
+   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="188" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="0">
    <LINKPOINT x="2265" y="5910">
    </LINKPOINT>
    <LINKPOINT x="8580" y="5910">
@@ -262,7 +264,7 @@
    <LINKPOINT x="5490" y="4380">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="189" dstpinname="CoordinatesBuffer" linkstyle="VHV">
+   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="189" dstpinname="CoordinatesBuffer" linkstyle="Bezier" hiddenwhenlocked="0">
    <LINKPOINT x="2265" y="5925">
    </LINKPOINT>
    <LINKPOINT x="4710" y="5925">
@@ -363,12 +365,12 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="195" srcpinname="Y Output Value" dstnodeid="197" dstpinname="Input" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="0" y="1708">
+   <LINKPOINT x="720" y="1200">
    </LINKPOINT>
-   <LINKPOINT x="3395" y="693">
+   <LINKPOINT x="1650" y="1200">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="197" srcpinname="Output" dstnodeid="187" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINK srcnodeid="197" srcpinname="Output" dstnodeid="187" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="1710" y="4733">
    </LINKPOINT>
    <LINKPOINT x="7440" y="4733">
@@ -389,9 +391,9 @@
    <INFO author="tmp" description="Creates a colored pointcloud layer and a pointcloud buffer and an (filtered) IndexBuffer." tags="DX11, Kinect">
    </INFO>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="208" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="1830" top="6720" width="795" height="240">
+   <BOUNDS type="Box" left="1380" top="4800" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1830" top="6720" width="0" height="0">
+   <BOUNDS type="Node" left="1380" top="4800" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -399,9 +401,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="208" srcpinname="Output Node" dstnodeid="73" dstpinname="Geometry In" linkstyle="VHV">
-   <LINKPOINT x="1480" y="7133">
+   <LINKPOINT x="1030" y="5533">
    </LINKPOINT>
-   <LINKPOINT x="2240" y="7133">
+   <LINKPOINT x="1790" y="5733">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -411,9 +413,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="209" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="240" top="7410" width="810" height="240">
+   <BOUNDS type="Box" left="240" top="7380" width="810" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="240" top="7410" width="0" height="0">
+   <BOUNDS type="Node" left="240" top="7380" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -421,23 +423,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="209" srcpinname="Output Node" dstnodeid="189" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="300" y="7760">
+   <LINKPOINT x="300" y="7733">
    </LINKPOINT>
-   <LINKPOINT x="3435" y="7735">
+   <LINKPOINT x="3435" y="7733">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="73" srcpinname="Geometry Out" dstnodeid="189" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1890" y="7725">
+   <LINKPOINT x="1440" y="7125">
    </LINKPOINT>
-   <LINKPOINT x="3690" y="7725">
+   <LINKPOINT x="3690" y="7125">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Filter (DX11.Buffer Pointcloud)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Filter (DX11.Buffer Pointcloud).v4p" nodename="Filter (DX11.Buffer Pointcloud)" componentmode="Hidden" id="182">
-   <BOUNDS type="Node" left="6885" top="4800" width="100" height="100">
+   <BOUNDS type="Node" left="7665" top="4800" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Assembler Vertices" visible="1">
    </PIN>
-   <PIN pinname="Transform Filter" visible="1">
+   <PIN pinname="Transform Filter" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="sobuffer" visible="1">
    </PIN>
@@ -449,43 +451,43 @@
    </PIN>
    <PIN pinname="VerticesCount" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="6885" top="4800">
+   <BOUNDS type="Box" left="7665" top="4800">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="26" srcpinname="Output Node" dstnodeid="182" dstpinname="Transform Filter" linkstyle="VHV">
-   <LINKPOINT x="8295" y="2798">
+   <LINKPOINT x="8555" y="2798">
    </LINKPOINT>
-   <LINKPOINT x="8295" y="2903">
+   <LINKPOINT x="8815" y="2903">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="182" dstpinname="CoordinatesBuffer" linkstyle="VHV">
+   <LINK srcnodeid="35" srcpinname="Buffer Out" dstnodeid="182" dstpinname="CoordinatesBuffer" linkstyle="Bezier" hiddenwhenlocked="0">
    <LINKPOINT x="2265" y="4373">
    </LINKPOINT>
-   <LINKPOINT x="7575" y="4373">
+   <LINKPOINT x="7965" y="4373">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="182" srcpinname="IndexBuffer" dstnodeid="189" dstpinname="IndexBuffer" linkstyle="VHV">
-   <LINKPOINT x="6870" y="6465">
+   <LINKPOINT x="7390" y="6465">
    </LINKPOINT>
-   <LINKPOINT x="5010" y="6465">
+   <LINKPOINT x="5270" y="6465">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="182" srcpinname="IndexBuffer" dstnodeid="190" dstpinname="Input Node" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="6645" y="6458">
+   <LINKPOINT x="7165" y="6458">
    </LINKPOINT>
-   <LINKPOINT x="10185" y="6458">
+   <LINKPOINT x="10445" y="6458">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="197" srcpinname="Output" dstnodeid="182" dstpinname="VerticesCount" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="1710" y="3188">
+   <LINK srcnodeid="197" srcpinname="Output" dstnodeid="182" dstpinname="VerticesCount" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1970" y="3188">
    </LINKPOINT>
-   <LINKPOINT x="6885" y="3188">
+   <LINKPOINT x="7405" y="3188">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="182" srcpinname="IndexBuffer" dstnodeid="73" dstpinname="Instance Arg Buffer" linkstyle="VHV">
-   <LINKPOINT x="6885" y="6188">
+   <LINKPOINT x="7405" y="5588">
    </LINKPOINT>
-   <LINKPOINT x="2910" y="6188">
+   <LINKPOINT x="2720" y="5588">
    </LINKPOINT>
    </LINK>
    </PATCH>

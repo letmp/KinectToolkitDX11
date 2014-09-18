@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta32.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Pointcloud (DX11.Texture).v4p" systemname="PointCloud_Simple" filename="D:\workspace\dev\research\2014\kinectPointcloudDX11\prototype02\modules\PointCloud_Simple.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Pointcloud (DX11.Texture).v4p" systemname="PointCloud_Simple" filename="D:\workspace\dev\research\2014\kinectPointcloudDX11\prototype02\modules\PointCloud_Simple.v4p">
    <BOUNDS type="Window" left="435" top="1605" width="19320" height="10545">
    </BOUNDS>
    <NODE systemname="Grid (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Grid (DX11.Geometry)" componentmode="Hidden" id="4">
@@ -148,7 +148,7 @@
    <LINKPOINT x="4695" y="1848">
    </LINKPOINT>
    </LINK>
-   <PACK Name="addonpack" Version="31.9.0">
+   <PACK Name="addonpack" Version="33.0.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="26" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="7170" top="555" width="795" height="240">
@@ -359,6 +359,8 @@
    </BOUNDS>
    <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="48" dstpinname="Transform In" linkstyle="VHV">
    <LINKPOINT x="2230" y="2300">
@@ -382,12 +384,6 @@
    <LINKPOINT x="4695" y="3443">
    </LINKPOINT>
    <LINKPOINT x="4695" y="3443">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="3" srcpinname="Geometry Out" dstnodeid="48" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1330" y="3443">
-   </LINKPOINT>
-   <LINKPOINT x="1325" y="3443">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled" linkstyle="VHV" hiddenwhenlocked="0">
@@ -811,5 +807,7 @@
    </LINKPOINT>
    <LINKPOINT x="13510" y="6263">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Geometry Out" dstnodeid="48" dstpinname="Geometry">
    </LINK>
    </PATCH>

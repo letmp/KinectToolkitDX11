@@ -49,16 +49,18 @@ vs2ps VS(vsIn input)
 	input.pos.z = depth;
 	input.pos = mul(input.pos, tW);
 	
+	//if(depth < 0.1f) input.pos.w = 0.0f;
 	// set pos.w to 0 when point is outside the filter transform
 	// this prevents the point from being drawn
 	float4 test = mul(input.pos, tFilter);
-	
+
 	if(	test.x < -0.5 || test.x > 0.5 ||
 		test.y < -0.5 || test.y > 0.5 ||
 		test.z < -0.5 || test.z > 0.5
 		){
 			input.pos.w = 0.0f; // this marks the vertex point as discard and will not be rendered
 		}
+	
 	
 	output.col = float4(input.pos);
 	input.pos = mul(input.pos,tVP);
