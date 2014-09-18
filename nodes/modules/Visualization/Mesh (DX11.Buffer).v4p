@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Visualization\Mesh (DX11.Buffer).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="7200" top="4185" width="14730" height="9675">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.0.0">
@@ -119,7 +119,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3420" top="8040" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="2" values="|Pointcloud Layer|,|Pointcloud Layer|">
+   <PIN pinname="Descriptive Name" slicecount="2" values="|Mesh Layer|,|Mesh Layer|">
    </PIN>
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
