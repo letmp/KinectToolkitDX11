@@ -38,10 +38,10 @@ You need:
 There are help patches for all included nodes that give small examples how to use them. For the beginning it is recommendable to look at the Pointcloud and Detection helppatches.
 The calibration is a bit more advanced, but well documented as well. Also check out the included girlpower folder for more complex examples.
 
-Some words about the Pointcloud nodes
+Some words about the Visualization nodes
 =====================================
 
-At this moment there a two different nodes to create pointclouds. Both are capable to filter out points by simply putting in filter transforms.
+At this moment there a 3 different nodes to visualize the kinect data. All of them are capable to filter out points by simply putting in filter transforms.
 
 1. The Pointcloud (DX11.Texture) node creates a simple colored pointcloud layer that can be rendered directly. Additionally it outputs a 2d texture that contains all (filtered)
 points where the world coordinates are encoded in its RGB values.
@@ -49,7 +49,9 @@ points where the world coordinates are encoded in its RGB values.
 2. The Pointcloud (DX11.Buffer) also creates a pointcloud layer with the advantage that you can use arbitrary geometries for each point. Additionally it outputs the number of vertices, a buffer containing
 the pointcloud data and an indexbuffer that can be used in further shaders.
 
-At this point the Detection nodes use the Pointcloud (DX11.Texture) node but it would be easy to adapt them with the buffers as input. 
+3. The Mesh (DX11.Buffer) creates a colored mesh layer and outputs a buffer of triangles for further usage.
+
+At this point the Detection nodes use the Pointcloud (DX11.Texture) node but it would be easy to adapt them with the DX11.Buffers as input. 
 
 Best Practise
 ============
