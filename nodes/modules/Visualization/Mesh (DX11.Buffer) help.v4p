@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.1_x64\packs\KinectToolkitDX11\nodes\modules\Visualization\Mesh (DX11.Buffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2550" top="2115" width="14550" height="11040">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -493,6 +493,8 @@
    </PIN>
    <PIN pinname="Mesh Buffer" visible="1">
    </PIN>
+   <PIN pinname="Mesh Layer" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Depth FOVXY" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="570" y="5535">
@@ -517,8 +519,6 @@
    </LINKPOINT>
    <LINKPOINT x="4560" y="5550">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Pointcloud Layer" dstnodeid="21" dstpinname="Layer 1">
    </LINK>
    <LINK srcnodeid="6" srcpinname="Transform Filter" dstnodeid="5" dstpinname="Transform Filter" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="11685" y="5535">
@@ -580,4 +580,6 @@
    </LINK>
    <PACK Name="addonpack" Version="33.0.0">
    </PACK>
+   <LINK srcnodeid="5" srcpinname="Mesh Layer" dstnodeid="21" dstpinname="Layer 1">
+   </LINK>
    </PATCH>
