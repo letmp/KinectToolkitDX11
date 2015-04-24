@@ -1,3 +1,5 @@
+THIS PACK IS DEPRECATED! GO TO [DX11.Pointcloud](https://github.com/letmp/dx11-pointcloud) FOR THE LATEST VERSION!
+
 KinectToolkitDX11
 =================
 
